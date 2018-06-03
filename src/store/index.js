@@ -6,7 +6,7 @@ import reducers from '../reducers';
 import { loadState, saveState } from './localStorage.js';
 
 const key = 'state';
-const stateToOmit = ['form', 'errors', 'player'];
+const stateToOmit = [];
 
 const persistedState = loadState(key);
 

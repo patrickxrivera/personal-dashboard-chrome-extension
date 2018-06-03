@@ -1,15 +1,12 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import Home from '../Home/Home';
+import HomeContainer from '../Home/HomeContainer';
 import { Wrapper } from './AppStyles';
 
-const App = ({ playTrack, currentPlaylist }) => (
-  <Router>
-    <Wrapper>
-      <Home />
-    </Wrapper>
-  </Router>
+const App = () => (
+  <Wrapper>
+    <HomeContainer />
+  </Wrapper>
 );
 
 export default App;

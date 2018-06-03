@@ -4,11 +4,12 @@ export const AppStyles = injectGlobal`
   html, body {
     margin: 0;
     padding: 0;
+    overflow: hidden;
   }
 `;
 
 export const Wrapper = styled.div`
-  color: rgb(66, 66, 65);
+  color: rgba(255, 255, 255, 0.7);
   fill: currentcolor;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, 'Apple Color Emoji', Arial,
     sans-serif, 'Segoe UI Emoji', 'Segoe UI Symbol';

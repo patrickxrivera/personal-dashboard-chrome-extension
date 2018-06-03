@@ -1,0 +1,12 @@
+.quote__hovered {
+  transform: translateY(-10px);
+}
+
+.quote-bottom__hovered {
+  opacity: 1;
+  transform: translateY(3px);
+}
+
+.twitter-icon__hovered {
+  margin-top: 5px;
+}
