@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Twitter } from 'react-feather';
+import { fadeIn } from '../../utils/animations';
 
 export const BackgroundImg = styled.img`
   z-index: -1;
@@ -13,6 +14,7 @@ export const Wrapper = styled.div`
   padding-right: 20px;
   height: 101vh;
   background: linear-gradient(rgba(1, 1, 1, 0.2), rgba(1, 1, 1, 0.5));
+  justify-content: space-between;
 `;
 
 export const TopWrapper = styled.div`
@@ -29,6 +31,8 @@ export const MiddleWrapper = styled.div`
   flex-direction: column;
   padding-top: 8rem;
   padding-top: 13rem;
+  opacity: 0;
+  animation: 200ms ${fadeIn} forwards;
 `;
 
 export const Time = styled.div`
