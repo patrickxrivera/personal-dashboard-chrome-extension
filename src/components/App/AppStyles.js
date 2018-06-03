@@ -11,7 +11,6 @@ export const AppStyles = injectGlobal`
 export const Wrapper = styled.div`
   color: rgba(255, 255, 255, 0.7);
   fill: currentcolor;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, 'Apple Color Emoji', Arial,
-    sans-serif, 'Segoe UI Emoji', 'Segoe UI Symbol';
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   line-height: 1.35;
 `;

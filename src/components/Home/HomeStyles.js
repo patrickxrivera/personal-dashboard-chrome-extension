@@ -72,8 +72,9 @@ export const QuoteWrapper = styled.div`
   width: 60%;
   text-align: center;
   font-weight: 100;
-  font-style: italic;
-  padding-bottom: 1rem;
+  padding-bottom: 0.8rem;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.9);
 `;
 
 export const Quote = styled.div`
@@ -83,6 +84,7 @@ export const Quote = styled.div`
   justify-content: center;
   align-items: center;
   transition: all 300ms ease;
+  font-size: 18px;
 `;
 
 export const QuoteBottom = styled.div`
@@ -98,8 +100,7 @@ export const QuoteBottom = styled.div`
 
 export const QuoteAuthor = styled.div`
   text-align: center;
-  font-size: 14px;
-  margin-right: 5px;
+  margin-right: 7px;
 `;
 
 export const TwitterIcon = styled(Twitter)`
@@ -108,6 +109,7 @@ export const TwitterIcon = styled(Twitter)`
   stroke-width: 1;
   fill: rgba(255, 255, 255, 0.7);
   color: rgba(255, 255, 255, 0.7);
+  padding-top: 2px;
 `;
 
 export const Settings = styled.div``;

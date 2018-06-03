@@ -1,9 +1,9 @@
 .quote__hovered {
-  transform: translateY(-10px);
+  transform: translateY(-7px);
 }
 
 .quote-bottom__hovered {
-  opacity: 1;
+  opacity: 0.8;
   transform: translateY(3px);
 }
 

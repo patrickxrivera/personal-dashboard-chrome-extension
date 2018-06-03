@@ -5,9 +5,13 @@ import getQuote from './utils/getQuote';
 
 class HomeContainer extends Component {
   state = {
-    quoteData: getQuote(),
+    quoteData: null,
     isHovered: false
   };
+
+  componentDidMount() {
+    this.setState({ quoteData: getQuote() });
+  }
 
   handleMouseOver = () => {
     this.setState({ isHovered: true });
