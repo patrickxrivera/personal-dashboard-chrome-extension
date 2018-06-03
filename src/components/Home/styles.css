@@ -10,3 +10,7 @@
 .twitter-icon__hovered {
   margin-top: 5px;
 }
+
+.bottom-wrapper__hovered {
+  transform: translateY(3px);
+}

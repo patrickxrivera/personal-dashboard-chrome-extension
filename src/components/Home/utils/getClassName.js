@@ -5,3 +5,5 @@ export const quoteBottomClassName = getClassName('quote-bottom__hovered');
 export const quoteClassName = getClassName('quote__hovered');
 
 export const twitterIconClassName = getClassName('twitter-icon__hovered');
+
+export const bottomWrapperClassName = getClassName('bottom-wrapper__hovered');

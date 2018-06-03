@@ -23,7 +23,9 @@ const Home = (props) => (
         </Style.MiddleWrapper>
 
         <Style.BottomWrapper>
-          <Style.Settings>Settings</Style.Settings>
+          <Style.Settings className={get.bottomWrapperClassName(props.isHovered)}>
+            Settings
+          </Style.Settings>
           <Style.QuoteWrapper
             onMouseOver={props.handleMouseOver}
             onMouseLeave={props.handleMouseLeave}>
@@ -37,7 +39,7 @@ const Home = (props) => (
               </a>
             </Style.QuoteBottom>
           </Style.QuoteWrapper>
-          <Style.Todo>Todo</Style.Todo>
+          <Style.Todo className={get.bottomWrapperClassName(props.isHovered)}>Todo</Style.Todo>
         </Style.BottomWrapper>
       </Style.Wrapper>
     )}

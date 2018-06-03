@@ -19,16 +19,20 @@ const getLocalTime = (timeType) => (date) =>
 
 export const getCurrentTime = getTime(CURRENT_TIME_FORMAT);
 
-export const getGreeting = () => pipe(getTime, setGreeting)(MILITARY_TIME_FORMAT);
+export const getMilitaryTime = (timeFormat) => getTime(timeFormat)();
+
+export const getGreeting = () => pipe(getMilitaryTime, setGreeting)(MILITARY_TIME_FORMAT);
 
 const setGreeting = (time) => {
   switch (true) {
     case time >= 0 && time < 12:
       return 'morning';
-    case time >= 12 && time < 5:
+    case time >= 12 && time < 17:
       return 'afternoon';
-    default:
+    case time >= 17 && time < 21:
       return 'evening';
+    case time > 21:
+      return 'night';
   }
 };
 
