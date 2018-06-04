@@ -1,4 +1,5 @@
 import React from 'react';
+import { func, shape, bool, string } from 'prop-types';
 
 import * as Style from './HomeStyles';
 import * as get from './utils/getClassName';
@@ -7,7 +8,7 @@ import './styles.css';
 
 const Home = (props) => (
   <div>
-    <Style.BackgroundImg src="https://source.unsplash.com/2LOkiyi97GM/1510x810" />
+    <Style.BackgroundImg src={props.src} />
     {props.timeIsLoaded && (
       <Style.Wrapper>
         <Style.TopWrapper>
@@ -23,9 +24,11 @@ const Home = (props) => (
         </Style.MiddleWrapper>
 
         <Style.BottomWrapper>
-          <Style.Settings className={get.bottomWrapperClassName(props.isHovered)}>
-            Settings
-          </Style.Settings>
+          <a style={Style.link} href={props.unsplash} target="_blank">
+            <Style.ImgLocation className={get.bottomWrapperClassName(props.isHovered)}>
+              {props.location}
+            </Style.ImgLocation>
+          </a>
           <Style.QuoteWrapper
             onMouseOver={props.handleMouseOver}
             onMouseLeave={props.handleMouseLeave}>
@@ -45,5 +48,23 @@ const Home = (props) => (
     )}
   </div>
 );
+
+Home.propTypes = {
+  quoteData: shape({
+    quote: string.isRequired,
+    author: string.isRequired
+  }),
+  image: shape({
+    src: string.isRequired,
+    unsplash: string.isRequired,
+    location: string.isRequired
+  }),
+  handleMouseOver: func.isRequired,
+  handleMouseLeave: func.isRequired,
+  currentTime: string,
+  greeting: string,
+  isHovered: bool,
+  timeIsLoaded: bool
+};
 
 export default Home;

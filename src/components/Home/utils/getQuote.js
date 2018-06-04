@@ -1,4 +1,3 @@
-import axios from 'axios';
 import { pipe } from 'ramda';
 
 import quotes from './quotes.js';

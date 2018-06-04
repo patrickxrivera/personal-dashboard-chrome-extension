@@ -31,7 +31,7 @@ const setGreeting = (time) => {
       return 'afternoon';
     case time >= 17 && time < 21:
       return 'evening';
-    case time > 21:
+    default:
       return 'night';
   }
 };

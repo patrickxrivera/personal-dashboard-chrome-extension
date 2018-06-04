@@ -15,6 +15,7 @@ export const Wrapper = styled.div`
   height: 101vh;
   background: linear-gradient(rgba(1, 1, 1, 0.2), rgba(1, 1, 1, 0.5));
   justify-content: space-between;
+  animation: 500ms ${fadeIn} ease-in forwards;
 `;
 
 export const TopWrapper = styled.div`
@@ -31,8 +32,6 @@ export const MiddleWrapper = styled.div`
   flex-direction: column;
   padding-top: 8rem;
   padding-top: 13rem;
-  opacity: 0;
-  animation: 200ms ${fadeIn} forwards;
 `;
 
 export const Time = styled.div`
@@ -73,7 +72,7 @@ export const BottomWrapper = styled.div`
 `;
 
 export const QuoteWrapper = styled.div`
-  width: 60%;
+  flex: 1;
   text-align: center;
   font-weight: 100;
   padding-bottom: 0.8rem;
@@ -116,7 +115,19 @@ export const TwitterIcon = styled(Twitter)`
   padding-top: 2px;
 `;
 
-export const Settings = styled.div``;
-export const Todo = styled.div``;
+export const link = {
+  textDecoration: 'none',
+  color: 'rgba(255,255,255,0.7)'
+};
+
+export const ImgLocation = styled.div`
+  font-weight: 300;
+  min-width: 15%;
+`;
+
+export const Todo = styled.div`
+  min-width: 15%;
+  text-align: right;
+`;
 export const ArticlesWrapper = styled.div``;
 export const TweetsWrapper = styled.div``;

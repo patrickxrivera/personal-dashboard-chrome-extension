@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import Home from './Home';
 import getQuote from './utils/getQuote';
+import images, { SRC_ROOT, UNSPLASH_ROOT } from './utils/images';
 import { getCurrentTime, getGreeting } from './utils/getTime';
 
 class HomeContainer extends Component {
@@ -9,6 +10,7 @@ class HomeContainer extends Component {
     quoteData: null,
     currentTime: null,
     greeting: null,
+    image: null,
     isHovered: false,
     timeisLoaded: false
   };
@@ -16,6 +18,7 @@ class HomeContainer extends Component {
   componentDidMount() {
     this.initCurrentTimeInterval();
     this.setQuoteData();
+    this.setImage();
   }
 
   initCurrentTimeInterval = () => {
@@ -34,6 +37,16 @@ class HomeContainer extends Component {
     this.setState({ quoteData: getQuote() });
   };
 
+  setImage = () => {
+    this.setState({
+      image: {
+        src: `${SRC_ROOT}${images.day[0].id}/1510x810`,
+        unsplash: `${UNSPLASH_ROOT}${images.day[0].id}`,
+        location: images.day[0].location
+      }
+    });
+  };
+
   handleMouseOver = () => {
     this.setState({ isHovered: true });
   };
@@ -49,6 +62,7 @@ class HomeContainer extends Component {
         handleMouseLeave={this.handleMouseLeave}
         {...this.state}
         {...this.state.quoteData}
+        {...this.state.image}
       />
     );
   }
