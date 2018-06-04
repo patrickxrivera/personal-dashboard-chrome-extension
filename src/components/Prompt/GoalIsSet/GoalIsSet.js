@@ -1,21 +1,29 @@
 import React from 'react';
 
 import * as Style from './GoalIsSetStyles';
+import Checkbox from './Checkbox';
 
 import './style.css';
 
-const GoalIsSet = ({ goalVal, isCheckedOff, handleCheckboxClick }) => (
-  <Style.Wrapper>
+const GoalIsSet = (props) => (
+  <Style.Wrapper onMouseOver={props.handleMouseOver} onMouseLeave={props.handleMouseLeave}>
     <Style.Heading>Today</Style.Heading>
     <Style.GoalWrapper>
-      <div className={'checkbox-container ' + (isCheckedOff ? 'checkbox-container__checked' : '')}>
-        <input onClick={handleCheckboxClick} type="checkbox" id="rememberMe" />
-        <label className="checkbox" htmlFor="rememberMe" />
-      </div>
-      <Style.Goal isCheckedOff={isCheckedOff}>
-        <span className={isCheckedOff ? 'strikethrough-on' : 'strikethrough-off'}>{goalVal}</span>
+      <Checkbox {...props} />
+
+      <Style.Goal isCheckedOff={props.isCheckedOff}>
+        <span className={props.isCheckedOff ? 'strikethrough-on' : 'strikethrough-off'}>
+          {props.goalVal}
+        </span>
       </Style.Goal>
-      <input type="checkbox" />
+
+      <Style.GoalActionWrapper
+        onClick={props.resetGoal}
+        className={!props.isMousedOver && !props.isCheckedOff ? 'moused-over' : ''}>
+        <Style.GoalAction isCheckedOff={props.isCheckedOff}>
+          {props.isCheckedOff ? '+' : 'x'}
+        </Style.GoalAction>
+      </Style.GoalActionWrapper>
     </Style.GoalWrapper>
   </Style.Wrapper>
 );

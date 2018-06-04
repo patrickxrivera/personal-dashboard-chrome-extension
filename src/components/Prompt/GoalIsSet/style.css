@@ -94,3 +94,7 @@
   opacity: 0;
   transition: all 500ms forwards;
 }
+
+.moused-over {
+  opacity: 0;
+}

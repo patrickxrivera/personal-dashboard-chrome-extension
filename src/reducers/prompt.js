@@ -1,6 +1,6 @@
 import { handleActions } from 'redux-actions';
 
-const initialState = {};
+const initialState = { isCheckedOff: false };
 
 export default handleActions(
   {
@@ -10,7 +10,17 @@ export default handleActions(
     }),
     UPDATE_GOAL_VAL: (state, action) => ({
       ...state,
-      goalVal: action.payload
+      goalVal: action.payload.target.value
+    }),
+    RESET_GOAL: (state, action) => ({
+      ...state,
+      goalIsSet: false,
+      isCheckedOff: false,
+      goalVal: ''
+    }),
+    TOGGLE_CHECKBOX: (state, action) => ({
+      ...state,
+      isCheckedOff: !state.isCheckedOff
     })
   },
   initialState
@@ -19,3 +29,5 @@ export default handleActions(
 export const getGoalIsSet = (state) => state.prompt.goalIsSet;
 
 export const getGoalVal = (state) => state.prompt.goalVal;
+
+export const getIsCheckedOff = (state) => state.prompt.isCheckedOff;
