@@ -9,6 +9,16 @@ import { setGoalIsSetToTrue, updateGoalVal } from '../../actions/prompt';
 const isEnterKey = ({ key }) => key === 'Enter';
 
 class PromptContainer extends Component {
+  state = {
+    isCheckedOff: false
+  };
+
+  handleCheckboxClick = () => {
+    console.log(!this.state.isCheckedOff);
+
+    this.setState({ isCheckedOff: !this.state.isCheckedOff });
+  };
+
   handleInputChange = (e) => {
     this.props.updateGoalVal(e.target.value);
   };
@@ -24,7 +34,7 @@ class PromptContainer extends Component {
 
   render() {
     return this.props.goalIsSet ? (
-      <GoalIsSet {...this.props} />
+      <GoalIsSet {...this.props} {...this.state} handleCheckboxClick={this.handleCheckboxClick} />
     ) : (
       <GoalNotSet
         handleInputChange={this.handleInputChange}

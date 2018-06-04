@@ -20,3 +20,10 @@ export const Goal = styled.div`
   text-align: center;
   margin-top: 0.4rem;
 `;
+
+export const GoalWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  min-width: 300px;
+  justify-content: space-between;
+`;
