@@ -4,6 +4,7 @@ export const Heading = styled.div`
   font-weight: 200;
   font-size: 2.54em;
   margin-top: 3rem;
+  text-align: center;
 `;
 
 export const Input = styled.input`
