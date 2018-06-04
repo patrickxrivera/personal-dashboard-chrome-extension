@@ -19,6 +19,7 @@ export const Goal = styled.div`
   font-size: 38px;
   text-align: center;
   margin-top: 0.4rem;
+  color: ${({ isCheckedOff }) => (isCheckedOff ? 'rgba(255,255,255,0.7)' : '#fff')};
 `;
 
 export const GoalWrapper = styled.div`
