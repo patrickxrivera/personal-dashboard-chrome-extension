@@ -45,26 +45,6 @@ export const Greeting = styled.div`
   margin-top: -1.5rem;
 `;
 
-export const Prompt = styled.div`
-  font-weight: 200;
-  font-size: 2.54em;
-  margin-top: 3rem;
-`;
-
-export const PromptInput = styled.input`
-  background-color: transparent;
-  border: none;
-  border-bottom: 2px solid #fff;
-  width: 30rem;
-  margin-top: 1rem;
-  font-size: 2.5rem;
-  color: #fff;
-  text-align: center;
-  &:focus {
-    outline: none;
-  }
-`;
-
 export const BottomWrapper = styled.div`
   display: flex;
   justify-content: space-between;

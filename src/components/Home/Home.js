@@ -3,6 +3,7 @@ import { func, shape, bool, string } from 'prop-types';
 
 import * as Style from './HomeStyles';
 import * as get from './utils/getClassName';
+import PromptContainer from '../Prompt/PromptContainer';
 import getTwitterLink from './utils/getTwitterLink';
 import './styles.css';
 
@@ -19,8 +20,7 @@ const Home = (props) => (
         <Style.MiddleWrapper>
           <Style.Time>{props.currentTime}</Style.Time>
           <Style.Greeting>Good {props.greeting}, Patrick.</Style.Greeting>
-          <Style.Prompt>What is your main focus today?</Style.Prompt>
-          <Style.PromptInput />
+          <PromptContainer />
         </Style.MiddleWrapper>
 
         <Style.BottomWrapper>

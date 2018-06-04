@@ -29,10 +29,8 @@ const setGreeting = (time) => {
       return 'morning';
     case time >= 12 && time < 17:
       return 'afternoon';
-    case time >= 17 && time < 21:
-      return 'evening';
     default:
-      return 'night';
+      return 'evening';
   }
 };
 
