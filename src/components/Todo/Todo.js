@@ -4,10 +4,10 @@ import * as Style from './TodoStyles';
 import * as get from '../Home/utils/getClassName';
 import Pane from './Pane';
 
-const Todo = ({ isHovered, handleTodoTextClick, paneIsActive }) => (
+const Todo = ({ isHovered, togglePaneState, paneIsActive, ...rest }) => (
   <Style.Wrapper>
-    {paneIsActive && <Pane />}
-    <Style.Text onClick={handleTodoTextClick} className={get.bottomWrapperClassName(isHovered)}>
+    {paneIsActive && <Pane {...rest} />}
+    <Style.Text onClick={togglePaneState} className={get.bottomWrapperClassName(isHovered)}>
       Todo
     </Style.Text>
   </Style.Wrapper>

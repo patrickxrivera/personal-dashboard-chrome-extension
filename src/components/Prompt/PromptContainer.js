@@ -3,10 +3,9 @@ import { connect } from 'react-redux';
 
 import GoalNotSet from './GoalNotSet/GoalNotSet';
 import GoalIsSet from './GoalIsSet/GoalIsSet';
+import { isEnterKey } from '../../utils/helpers';
 import { getGoalIsSet, getGoalVal, getIsCheckedOff } from '../../reducers/prompt';
 import { setGoalIsSetToTrue, updateGoalVal, resetGoal, toggleCheckbox } from '../../actions/prompt';
-
-const isEnterKey = ({ key }) => key === 'Enter';
 
 class PromptContainer extends Component {
   state = {

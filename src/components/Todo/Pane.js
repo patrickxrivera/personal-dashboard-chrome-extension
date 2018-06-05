@@ -1,43 +1,31 @@
 import React from 'react';
+import { isEmpty } from 'ramda';
 
 import * as Style from './TodoStyles';
 
-const Pane = ({}) => (
+const Pane = ({ todos, newTodoVal, handleKeyPress, updateNewTodoVal }) => (
   <Style.PaneWrapper>
     <Style.Heading>Today</Style.Heading>
-    {/* <Style.Body>Add a new todo to get started</Style.Body> */}
-    <Style.TodoList>
-      <Style.TodoListItem>
-        <input type="checkbox" />
-        <Style.TodoText>Read Algorithm Design Manual</Style.TodoText>
-      </Style.TodoListItem>
-      <Style.TodoListItem>
-        <input type="checkbox" />
-        <Style.TodoText>Do five Interview Cake problems</Style.TodoText>
-      </Style.TodoListItem>
-      <Style.TodoListItem>
-        <input type="checkbox" />
-        <Style.TodoText>Finish sprint for personal project</Style.TodoText>
-      </Style.TodoListItem>
-      <Style.TodoListItem>
-        <input type="checkbox" />
-        <Style.TodoText>Finish sprint for personal project</Style.TodoText>
-      </Style.TodoListItem>
-      <Style.TodoListItem>
-        <input type="checkbox" />
-        <Style.TodoText>Finish sprint for personal project</Style.TodoText>
-      </Style.TodoListItem>
-      <Style.TodoListItem>
-        <input type="checkbox" />
-        <Style.TodoText>Finish sprint for personal project</Style.TodoText>
-      </Style.TodoListItem>
-      <Style.TodoListItem>
-        <input type="checkbox" />
-        <Style.TodoText>Finish sprint for personal project</Style.TodoText>
-      </Style.TodoListItem>
-    </Style.TodoList>
-    <Style.Input placeholder="New Todo" autoFocus />
+    {isEmpty(todos) ? renderPlaceholder() : renderTodoList(todos)}
+    <Style.Input
+      onKeyPress={handleKeyPress}
+      value={newTodoVal}
+      onChange={updateNewTodoVal}
+      placeholder="New Todo"
+      autoFocus
+    />
   </Style.PaneWrapper>
+);
+
+const renderPlaceholder = () => <Style.Body>Add a new todo to get started</Style.Body>;
+
+const renderTodoList = (todos) => <Style.TodoList>{todos.map(renderTodo)}</Style.TodoList>;
+
+const renderTodo = ({ isChecked, text }) => (
+  <Style.TodoListItem key={text}>
+    <input type="checkbox" />
+    <Style.TodoText>{text}</Style.TodoText>
+  </Style.TodoListItem>
 );
 
 export default Pane;
