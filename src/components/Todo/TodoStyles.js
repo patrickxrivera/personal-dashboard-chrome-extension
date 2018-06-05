@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Trash2 } from 'react-feather';
 
 import { fadeIn } from '../../utils/animations';
 
@@ -61,6 +62,9 @@ export const TodoList = styled.div`
 
 export const TodoListItem = styled.div`
   margin: 3px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 export const TodoText = styled.span`
@@ -69,4 +73,16 @@ export const TodoText = styled.span`
   color: #fff;
   opacity: ${({ isChecked }) => (isChecked ? 0.5 : 1)};
   text-decoration: ${({ isChecked }) => (isChecked ? 'line-through' : '')};
+`;
+
+export const TrashIcon = styled(Trash2)`
+  color: #fff;
+  width: 14px;
+  height: 14px;
+  cursor: pointer;
+  animation: 30ms ${fadeIn} ease-in forwards;
+`;
+
+export const IconWrapper = styled.div`
+  opacity: ${({ isChecked }) => (isChecked ? 0.5 : 1)};
 `;
