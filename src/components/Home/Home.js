@@ -5,6 +5,7 @@ import * as Style from './HomeStyles';
 import * as get from './utils/getClassName';
 import PromptContainer from '../Prompt/PromptContainer';
 import TodoContainer from '../Todo/TodoContainer';
+import ArticlesContainer from '../Articles/ArticlesContainer';
 import getTwitterLink from './utils/getTwitterLink';
 import './styles.css';
 
@@ -14,7 +15,7 @@ const Home = (props) => (
     {props.timeIsLoaded && (
       <Style.Wrapper>
         <Style.TopWrapper>
-          <Style.ArticlesWrapper>Articles</Style.ArticlesWrapper>
+          <ArticlesContainer />
           <Style.TweetsWrapper>Tweets</Style.TweetsWrapper>
         </Style.TopWrapper>
 

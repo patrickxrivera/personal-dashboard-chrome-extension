@@ -110,5 +110,5 @@ export const Todo = styled.div`
   min-width: 15%;
   text-align: right;
 `;
-export const ArticlesWrapper = styled.div``;
+
 export const TweetsWrapper = styled.div``;

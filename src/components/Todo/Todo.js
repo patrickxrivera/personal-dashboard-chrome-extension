@@ -2,11 +2,11 @@ import React from 'react';
 
 import * as Style from './TodoStyles';
 import * as get from '../Home/utils/getClassName';
-import Pane from './Pane';
+import TodoPane from './TodoPane';
 
 const Todo = ({ isHovered, togglePaneState, paneIsActive, ...rest }) => (
   <Style.Wrapper>
-    {paneIsActive && <Pane {...rest} />}
+    {paneIsActive && <TodoPane {...rest} />}
     <Style.Text onClick={togglePaneState} className={get.bottomWrapperClassName(isHovered)}>
       Todo
     </Style.Text>
