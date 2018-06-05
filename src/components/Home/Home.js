@@ -4,6 +4,7 @@ import { func, shape, bool, string } from 'prop-types';
 import * as Style from './HomeStyles';
 import * as get from './utils/getClassName';
 import PromptContainer from '../Prompt/PromptContainer';
+import TodoContainer from '../Todo/TodoContainer';
 import getTwitterLink from './utils/getTwitterLink';
 import './styles.css';
 
@@ -42,7 +43,7 @@ const Home = (props) => (
               </a>
             </Style.QuoteBottom>
           </Style.QuoteWrapper>
-          <Style.Todo className={get.bottomWrapperClassName(props.isHovered)}>Todo</Style.Todo>
+          <TodoContainer {...props} />
         </Style.BottomWrapper>
       </Style.Wrapper>
     )}
