@@ -38,13 +38,6 @@ export default [
     permalink: 'http://quotes.stormconsultancy.co.uk/quotes/23'
   },
   {
-    author: 'Unknown',
-    id: 21,
-    quote:
-      'XML is like violence – if it doesn’t solve your problems, you are not using enough of it.',
-    permalink: 'http://quotes.stormconsultancy.co.uk/quotes/21'
-  },
-  {
     author: 'Douglas Adams',
     id: 19,
     quote: 'I love deadlines. I like the whooshing sound they make as they fly by.',

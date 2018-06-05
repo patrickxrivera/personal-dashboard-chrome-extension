@@ -15,7 +15,7 @@ export const Text = styled.div`
 `;
 
 export const PaneWrapper = styled.div`
-  min-height: 120px;
+  height: auto;
   width: 18%;
   position: absolute;
   right: 3px;
@@ -40,6 +40,7 @@ export const Heading = styled.div`
 
 export const Body = styled.div`
   text-align: center;
+  margin: 30px 0;
   font-size: 15px;
 `;
 
@@ -55,7 +56,7 @@ export const Input = styled.input`
 
 export const TodoList = styled.div`
   margin-top: 2px;
-  margin-bottom: 18px;
+  margin-bottom: 10px;
 `;
 
 export const TodoListItem = styled.div`
@@ -66,4 +67,6 @@ export const TodoText = styled.span`
   font-size: 15px;
   margin-left: 5px;
   color: #fff;
+  opacity: ${({ isChecked }) => (isChecked ? 0.5 : 1)};
+  text-decoration: ${({ isChecked }) => (isChecked ? 'line-through' : '')};
 `;

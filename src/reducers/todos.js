@@ -3,11 +3,7 @@ import { handleActions } from 'redux-actions';
 const initialState = {
   paneIsActive: false,
   newTodoVal: '',
-  todos: [
-    { text: 'Read algorithm design manual', isChecked: false },
-    { text: 'Do five code challenges', isChecked: false },
-    { text: 'Finish sprint III for chrome extension', isChecked: false }
-  ]
+  todos: []
 };
 
 export default handleActions(
@@ -30,13 +26,26 @@ export default handleActions(
     UPDATE_NEW_TODO_VAL: (state, action) => ({
       ...state,
       newTodoVal: action.payload.target.value
+    }),
+    UPDATE_CHECKED_STATE: (state, action) => ({
+      ...state,
+      todos: state.todos.map(todo(action))
     })
   },
   initialState
 );
 
-export const getPaneIsActive = (state) => state.todo.paneIsActive;
+const todo = (action) => (state, idx) => {
+  switch (action.type) {
+    case 'UPDATE_CHECKED_STATE':
+      return idx === action.payload ? { ...state, isChecked: !state.isChecked } : state;
+    default:
+      return state;
+  }
+};
 
-export const getTodos = (state) => state.todo.todos;
+export const getPaneIsActive = (state) => state.todos.paneIsActive;
 
-export const getNewTodoVal = (state) => state.todo.newTodoVal;
+export const getTodos = (state) => state.todos.todos;
+
+export const getNewTodoVal = (state) => state.todos.newTodoVal;

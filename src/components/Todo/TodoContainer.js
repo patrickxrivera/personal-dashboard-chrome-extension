@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import Todo from './Todo';
-import { togglePaneState, addTodo, updateNewTodoVal } from '../../actions/todo';
-import { getPaneIsActive, getTodos, getNewTodoVal } from '../../reducers/todo';
+import * as todoActions from '../../actions/todos';
+import { getPaneIsActive, getTodos, getNewTodoVal } from '../../reducers/todos';
 import { isEnterKey } from '../../utils/helpers';
 
 class TodoContainer extends Component {
@@ -22,6 +22,4 @@ const mapStateToProps = (state) => ({
   paneIsActive: getPaneIsActive(state)
 });
 
-export default connect(mapStateToProps, { togglePaneState, addTodo, updateNewTodoVal })(
-  TodoContainer
-);
+export default connect(mapStateToProps, { ...todoActions })(TodoContainer);
