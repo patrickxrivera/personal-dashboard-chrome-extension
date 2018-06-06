@@ -1,6 +1,7 @@
 import { pipe } from 'ramda';
 
-import quotes from './quotes.js';
+import quotes from './data/quotes.js';
+import { getRandBetween } from './helpers';
 
 const quoteRange = {
   min: 0,
@@ -8,7 +9,5 @@ const quoteRange = {
 };
 
 export default () => pipe(getRandBetween, getQuoteFromJSON)(quoteRange);
-
-const getRandBetween = ({ min, max }) => Math.floor(Math.random() * (max - min + 1) + min);
 
 const getQuoteFromJSON = (idx) => quotes[idx];

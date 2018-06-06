@@ -1,24 +1,23 @@
 import React, { Component } from 'react';
+import moment from 'moment';
+import { connect } from 'react-redux';
 
 import Home from './Home';
-import getQuote from './utils/getQuote';
-import images, { SRC_ROOT, UNSPLASH_ROOT } from './utils/images';
+import { getQuoteData, getImageData, getLatestDate } from '../../reducers/home';
+import { refreshQuoteData, refreshImageData, updateLatestDate } from '../../actions/home';
 import { getCurrentTime, getGreeting } from './utils/getTime';
 
 class HomeContainer extends Component {
   state = {
-    quoteData: null,
     currentTime: null,
     greeting: null,
-    image: null,
     isHovered: false,
     timeisLoaded: false
   };
 
   componentDidMount() {
     this.initCurrentTimeInterval();
-    this.setQuoteData();
-    this.setImage();
+    this.maybeRefreshQuoteAndImage();
   }
 
   initCurrentTimeInterval = () => {
@@ -33,19 +32,18 @@ class HomeContainer extends Component {
     });
   };
 
-  setQuoteData = () => {
-    this.setState({ quoteData: getQuote() });
+  maybeRefreshQuoteAndImage = () => {
+    const { updateLatestDate, refreshQuoteData, refreshImageData } = this.props;
+    const now = moment(Date.now());
+
+    if (this.isNewDate(now)) {
+      updateLatestDate(now);
+      refreshQuoteData();
+      refreshImageData();
+    }
   };
 
-  setImage = () => {
-    this.setState({
-      image: {
-        src: `${SRC_ROOT}${images.day[0].id}/1510x810`,
-        unsplash: `${UNSPLASH_ROOT}${images.day[0].id}`,
-        location: images.day[0].location
-      }
-    });
-  };
+  isNewDate = (now) => !now.isSame(this.props.latestDate, 'd');
 
   handleMouseOver = () => {
     this.setState({ isHovered: true });
@@ -61,11 +59,19 @@ class HomeContainer extends Component {
         handleMouseOver={this.handleMouseOver}
         handleMouseLeave={this.handleMouseLeave}
         {...this.state}
-        {...this.state.quoteData}
-        {...this.state.image}
+        {...this.props.quoteData}
+        {...this.props.imageData}
       />
     );
   }
 }
 
-export default HomeContainer;
+const mapStateToProps = (state) => ({
+  quoteData: getQuoteData(state),
+  imageData: getImageData(state),
+  latestDate: getLatestDate(state)
+});
+
+export default connect(mapStateToProps, { refreshQuoteData, refreshImageData, updateLatestDate })(
+  HomeContainer
+);

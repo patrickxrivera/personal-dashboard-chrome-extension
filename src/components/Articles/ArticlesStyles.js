@@ -72,6 +72,17 @@ export const Square = styled.div`
   align-items: center;
 `;
 
+export const ProductHuntSquare = styled.div`
+  height: 20px;
+  width: 20px;
+  margin-right: 6px;
+  background-color: #da552f;
+  border-radius: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 export const CountText = styled.div`
   color: #fff;
   font-weight: 500;
@@ -82,18 +93,26 @@ export const Text = styled.div`
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, 'Apple Color Emoji', Arial,
-    sans-serif, 'Segoe UI Emoji', 'Segoe UI Symbol';
+  font-family: Varela, 'Helvetica Neue', Helvetica, sans-serif;
 `;
 export const Title = styled.div``;
 
 export const Comments = styled.div`
   font-size: 12px;
-  opacity: 0.6;
   margin-top: 2px;
+  color: #9b9ba5;
 `;
 
 export const Link = styled.a`
-  color: rgb(66, 66, 65);
+  color: inherit;
   text-decoration: none;
+  &:hover {
+    color: rgb(66, 66, 65);
+  }
+`;
+
+export const Tagline = styled.div`
+  color: #87969d;
+  font-size: 13px;
+  margin: 3px 0;
 `;

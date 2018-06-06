@@ -29,7 +29,7 @@ const Home = (props) => (
         <Style.BottomWrapper>
           <a style={Style.link} href={props.unsplash} target="_blank">
             <Style.ImgLocation className={get.bottomWrapperClassName(props.isHovered)}>
-              {props.location}
+              {props.credits}
             </Style.ImgLocation>
           </a>
           <Style.QuoteWrapper
