@@ -9,6 +9,7 @@ export const Wrapper = styled.div`
 
 export const Text = styled.div`
   text-align: right;
+  font-size: 16px;
   &:hover {
     color: #fff;
     cursor: pointer;

@@ -95,6 +95,6 @@
   transition: all 500ms forwards;
 }
 
-.moused-over {
+.not-moused-over {
   opacity: 0;
 }

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { XCircle, PlusCircle } from 'react-feather';
 
 import { fadeIn } from '../../../utils/animations';
 
@@ -31,24 +32,15 @@ export const GoalWrapper = styled.div`
 `;
 
 export const GoalActionWrapper = styled.div`
-  margin-top: 8px;
-  border: 1px solid transparent;
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
+  margin-top: 15px;
   cursor: pointer;
-  &:hover {
-    transform: scale(1.2);
-    border: 1px solid rgba(255, 255, 255, 0.7);
-    transition: 150ms ease;
-  }
+  animation: ${fadeIn} 80ms;
 `;
 
 export const GoalAction = styled.div`
-  margin-left: 7.5px;
   color: ${({ isCheckedOff }) => (isCheckedOff ? 'rgba(255,255,255,0.7)' : '#fff')};
-  &:hover {
-    transform: scale(1.2);
-    margin-left: ${({ isCheckedOff }) => (isCheckedOff ? '7.9px' : '8.5px')};
-  }
 `;
+
+export const XIcon = styled(XCircle)``;
+
+export const PlusIcon = styled(PlusCircle)``;

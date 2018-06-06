@@ -19,9 +19,9 @@ const GoalIsSet = (props) => (
 
       <Style.GoalActionWrapper
         onClick={props.resetGoal}
-        className={!props.isMousedOver && !props.isCheckedOff ? 'moused-over' : ''}>
+        className={!props.isMousedOver && !props.isCheckedOff ? 'not-moused-over' : ''}>
         <Style.GoalAction isCheckedOff={props.isCheckedOff}>
-          {props.isCheckedOff ? '+' : 'x'}
+          {props.isCheckedOff ? <Style.PlusIcon /> : <Style.XIcon />}
         </Style.GoalAction>
       </Style.GoalActionWrapper>
     </Style.GoalWrapper>

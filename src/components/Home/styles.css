@@ -7,6 +7,10 @@
   transform: translateY(3px);
 }
 
+.quote-bottom__not-hovered {
+  opacity: 0;
+}
+
 .twitter-icon__hovered {
   margin-top: 5px;
 }

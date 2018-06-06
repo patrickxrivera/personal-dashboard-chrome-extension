@@ -7,7 +7,7 @@ const Checkbox = ({ isCheckedOff, isMousedOver, toggleCheckbox }) => (
     className={
       'checkbox-container ' +
       (isCheckedOff ? 'checkbox-container__checked' : '') +
-      (!isMousedOver && !isCheckedOff ? 'moused-over' : '')
+      (!isMousedOver && !isCheckedOff ? 'not-moused-over' : '')
     }>
     <input onClick={toggleCheckbox} type="checkbox" id="rememberMe" defaultChecked={isCheckedOff} />
     <label className="checkbox" htmlFor="rememberMe" />

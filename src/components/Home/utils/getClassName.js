@@ -1,6 +1,10 @@
-const getClassName = (className) => (isHovered) => (isHovered ? className : '');
+const getClassName = (isHoveredClass, notHoveredClass = '') => (isHovered) =>
+  isHovered ? isHoveredClass : notHoveredClass;
 
-export const quoteBottomClassName = getClassName('quote-bottom__hovered');
+export const quoteBottomClassName = getClassName(
+  'quote-bottom__hovered',
+  'quote-bottom__not-hovered'
+);
 
 export const quoteClassName = getClassName('quote__hovered');
 

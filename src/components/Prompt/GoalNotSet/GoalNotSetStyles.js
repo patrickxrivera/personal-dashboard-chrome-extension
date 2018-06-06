@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Heading = styled.div`
   font-weight: 200;
-  font-size: 2.54em;
+  font-size: 41px;
   margin-top: 3rem;
   text-align: center;
 `;

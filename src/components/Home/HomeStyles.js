@@ -78,7 +78,7 @@ export const QuoteBottom = styled.div`
   align-items: center;
   border: 2px red border;
   margin-top: -30px;
-  opacity: 0;
+  font-size: 16px;
   transition: all 300ms ease;
 `;
 
@@ -104,6 +104,7 @@ export const link = {
 export const ImgLocation = styled.div`
   font-weight: 300;
   min-width: 15%;
+  font-size: 16px;
 `;
 
 export const Todo = styled.div`

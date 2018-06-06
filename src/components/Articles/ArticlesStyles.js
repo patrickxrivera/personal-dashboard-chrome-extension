@@ -4,6 +4,7 @@ import { fadeIn } from '../../utils/animations';
 
 export const ArticlesText = styled.div`
   cursor: pointer;
+  font-size: 16px;
   &:hover {
     color: #fff;
   }
