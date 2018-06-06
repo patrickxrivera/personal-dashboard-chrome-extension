@@ -9,10 +9,26 @@ export const ArticlesText = styled.div`
   }
 `;
 
-export const PaneWrapper = styled.div`
+export const HackerNewsPaneWrapper = styled.div`
   height: auto;
   position: absolute;
   left: 3px;
+  top: 8%;
+  width: 350px;
+  background: rgba(15, 15, 15, 0.925);
+  text-align: left;
+  text-shadow: none;
+  border-radius: 3px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  animation: 90ms ${fadeIn} ease-in forwards;
+`;
+
+export const ProductHuntPaneWrapper = styled.div`
+  height: auto;
+  position: absolute;
+  right: 3px;
   top: 8%;
   width: 350px;
   background: rgba(15, 15, 15, 0.925);
@@ -46,8 +62,8 @@ export const Count = styled.div`
 `;
 
 export const Square = styled.div`
-  height: 25px;
-  width: 25px;
+  height: 20px;
+  width: 20px;
   margin-right: 6px;
   background-color: #ff4000;
   border-radius: 2px;
@@ -59,13 +75,15 @@ export const Square = styled.div`
 export const CountText = styled.div`
   color: #fff;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 14px;
 `;
 
 export const Text = styled.div`
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, 'Apple Color Emoji', Arial,
+    sans-serif, 'Segoe UI Emoji', 'Segoe UI Symbol';
 `;
 export const Title = styled.div``;
 

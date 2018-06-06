@@ -5,7 +5,7 @@ const TOP_STORIES_ENDPOINT = 'https://hacker-news.firebaseio.com/v0/topstories.j
 const STORY_ROOT = 'https://hacker-news.firebaseio.com/v0/item/';
 
 export default {
-  fetchArticlesSent: () =>
+  fetchHackerNewsArticlesSent: () =>
     pipeP(fetchTopStoriesIds, sliceTopFiveStories, fetchTopFiveStoriesData, pluck('data'))(
       TOP_STORIES_ENDPOINT
     )

@@ -1,15 +1,15 @@
 import React from 'react';
 
-import * as Style from './ArticlesStyles';
-import { Heading } from '../Todo/TodoStyles';
+import * as Style from '../ArticlesStyles';
+import { Heading } from '../../Todo/TodoStyles';
 
 const COMMENTS_ROOT = 'https://news.ycombinator.com/item?id=';
 
-const ArticlesPane = ({ articles }) => (
-  <Style.PaneWrapper>
+const HackerNewsPane = ({ articles }) => (
+  <Style.HackerNewsPaneWrapper>
     <Heading>Top Stories</Heading>
     {articles ? renderArticlesList(articles) : renderPlaceholder()}
-  </Style.PaneWrapper>
+  </Style.HackerNewsPaneWrapper>
 );
 
 const renderArticlesList = (articles) => (
@@ -40,4 +40,4 @@ const renderArticle = ({ title, descendants, url, id }, idx) => (
 
 const renderPlaceholder = () => <div>I'm a silly placeholder</div>;
 
-export default ArticlesPane;
+export default HackerNewsPane;
