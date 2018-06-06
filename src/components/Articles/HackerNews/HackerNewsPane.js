@@ -37,6 +37,6 @@ const renderArticle = ({ title, descendants, url, id }, idx) => (
   </Style.ArticleListItem>
 );
 
-const renderPlaceholder = () => <div>I'm a silly placeholder</div>;
+const renderPlaceholder = () => <div>No stories available. Check back later!</div>;
 
 export default HackerNewsPane;
