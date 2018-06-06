@@ -14,7 +14,7 @@ export const Wrapper = styled.div`
   padding-left: 20px;
   padding-right: 20px;
   height: 101vh;
-  background: linear-gradient(rgba(1, 1, 1, 0.2), rgba(1, 1, 1, 0.5));
+  background: linear-gradient(rgba(1, 1, 1, 0.1), rgba(1, 1, 1, 0.1));
   justify-content: space-between;
   animation: 200ms ${fadeIn} ease-in forwards;
 `;

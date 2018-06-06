@@ -13,7 +13,7 @@ const imageRange = {
 
 export default () => pipe(getRandBetween, selectImage, generateImageData)(imageRange);
 
-const selectImage = (randIdx) => images[randIdx];
+const selectImage = (randIdx) => images[1];
 
 const generateImageData = ({ author, id }) => ({
   src: `${SRC_ROOT}${id}/1510x810`,

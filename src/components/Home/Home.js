@@ -27,11 +27,12 @@ const Home = (props) => (
         </Style.MiddleWrapper>
 
         <Style.BottomWrapper>
-          <a style={Style.link} href={props.unsplash} target="_blank">
-            <Style.ImgLocation className={get.bottomWrapperClassName(props.isHovered)}>
+          <Style.ImgLocation className={get.bottomWrapperClassName(props.isHovered)}>
+            <a style={Style.link} href={props.unsplash} target="_blank">
               {props.credits}
-            </Style.ImgLocation>
-          </a>
+            </a>
+          </Style.ImgLocation>
+
           <Style.QuoteWrapper
             onMouseOver={props.handleMouseOver}
             onMouseLeave={props.handleMouseLeave}>
