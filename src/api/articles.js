@@ -1,28 +1,19 @@
 import axios from 'axios';
 import { pipeP, pluck } from 'ramda';
 
-const TOP_STORIES_ENDPOINT = 'https://hacker-news.firebaseio.com/v0/topstories.json';
-const STORY_ROOT = 'https://hacker-news.firebaseio.com/v0/item/';
-
-const PRODUCT_HUNT_ENDPOINT = 'https://api.producthunt.com/v1/me/feed';
-const PRODUCT_HUNT_DEV_TOKEN = '499ade07963af140ba379260556a120b53f84557ad623faf3e4dd98d8056c115';
-const PRODUCT_HUNT_CONFIG = {
-  headers: {
-    Authorization: `Bearer ${PRODUCT_HUNT_DEV_TOKEN}`
-  }
-};
+import * as e from '../utils/endpoints';
 
 export default {
   fetchHackerNewsArticlesSent: () =>
     pipeP(fetchTopStoriesIds, sliceTopFiveStories, fetchTopFiveStoriesData, pluck('data'))(
-      TOP_STORIES_ENDPOINT
+      e.HN_TOP_STORIES
     ),
-  fetchProductHuntArticlesSent: () => pipeP(fetchTopPosts, sliceTopFivePosts)(PRODUCT_HUNT_ENDPOINT)
+  fetchProductHuntArticlesSent: () => pipeP(fetchTopPosts, sliceTopFivePosts)(e.PH_TOP_POSTS)
 };
 
 /* Hacker News Pipe */
 
-const fetchTopStoriesIds = (endpoint) => axios.get(TOP_STORIES_ENDPOINT);
+const fetchTopStoriesIds = (endpoint) => axios.get(endpoint);
 
 const sliceTopFiveStories = ({ data }) => data.slice(0, 5);
 
@@ -31,10 +22,10 @@ const fetchTopFiveStoriesData = (topFiveStoriesIds) =>
 
 const fetchEndpoints = (id) => axios.get(createStoryEndpoint(id));
 
-const createStoryEndpoint = (id) => `${STORY_ROOT}${id}.json`;
+const createStoryEndpoint = (id) => `${e.HN_STORY}${id}.json`;
 
 /* Product Hunt Pipe */
 
-const fetchTopPosts = (endpoint) => axios.get(endpoint, PRODUCT_HUNT_CONFIG);
+const fetchTopPosts = (endpoint) => axios.get(endpoint, e.PH_CONFIG);
 
 const sliceTopFivePosts = ({ data }) => data.posts.slice(0, 5);

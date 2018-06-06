@@ -2,8 +2,7 @@ import React from 'react';
 
 import * as Style from '../ArticlesStyles';
 import { Heading } from '../../Todo/TodoStyles';
-
-const COMMENTS_ROOT = 'https://news.ycombinator.com/item?id=';
+import { HN_COMMENTS_ROOT } from '../../../utils/endpoints';
 
 const HackerNewsPane = ({ articles }) => (
   <Style.HackerNewsPaneWrapper>
@@ -30,7 +29,7 @@ const renderArticle = ({ title, descendants, url, id }, idx) => (
         </Style.Link>
       </Style.Title>
       <Style.Comments>
-        <Style.Link target="_blank" href={`${COMMENTS_ROOT}${id}`}>
+        <Style.Link target="_blank" href={`${HN_COMMENTS_ROOT}${id}`}>
           {descendants === 1 ? `${descendants} comment` : `${descendants} comments`}
         </Style.Link>
       </Style.Comments>
