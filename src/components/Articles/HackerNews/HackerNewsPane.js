@@ -31,7 +31,7 @@ const renderArticle = ({ title, descendants, url, id }, idx) => (
       </Style.Title>
       <Style.Comments>
         <Style.Link target="_blank" href={`${COMMENTS_ROOT}${id}`}>
-          {descendants} comments
+          {descendants === 1 ? `${descendants} comment` : `${descendants} comments`}
         </Style.Link>
       </Style.Comments>
     </Style.Text>

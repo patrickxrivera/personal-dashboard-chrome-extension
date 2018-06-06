@@ -14,7 +14,7 @@ const Home = (props) => (
   <div>
     <Style.BackgroundImg src={props.src} />
     {props.timeIsLoaded && (
-      <Style.Wrapper>
+      <Style.Wrapper isHome={true}>
         <Style.TopWrapper>
           <HackerNewsContainer />
           <ProductHuntContainer />
@@ -22,7 +22,9 @@ const Home = (props) => (
 
         <Style.MiddleWrapper>
           <Style.Time>{props.currentTime}</Style.Time>
-          <Style.Greeting>Good {props.greeting}, Patrick.</Style.Greeting>
+          <Style.Greeting>
+            Good {props.greeting}, {props.name}.
+          </Style.Greeting>
           <PromptContainer />
         </Style.MiddleWrapper>
 

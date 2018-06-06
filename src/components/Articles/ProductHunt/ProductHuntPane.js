@@ -30,7 +30,7 @@ const renderArticle = ({ name, comments_count, discussion_url, redirect_url, tag
       </Style.Title>
       <Style.Comments>
         <Style.Link target="_blank" href={discussion_url}>
-          {comments_count} comments
+          {comments_count === 1 ? `${comments_count} comment` : `${comments_count} comments`}
         </Style.Link>
       </Style.Comments>
     </Style.Text>

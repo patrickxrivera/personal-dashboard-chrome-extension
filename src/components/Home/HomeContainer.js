@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-import moment from 'moment';
 import { connect } from 'react-redux';
 
 import Home from './Home';
-import { getQuoteData, getImageData, getLatestDate } from '../../reducers/home';
-import { refreshQuoteData, refreshImageData, updateLatestDate } from '../../actions/home';
+import { getName } from '../../reducers/auth';
 import { getCurrentTime, getGreeting } from './utils/getTime';
 
 class HomeContainer extends Component {
@@ -17,7 +15,6 @@ class HomeContainer extends Component {
 
   componentDidMount() {
     this.initCurrentTimeInterval();
-    this.maybeRefreshQuoteAndImage();
   }
 
   initCurrentTimeInterval = () => {
@@ -31,19 +28,6 @@ class HomeContainer extends Component {
       timeIsLoaded: true
     });
   };
-
-  maybeRefreshQuoteAndImage = () => {
-    const { updateLatestDate, refreshQuoteData, refreshImageData } = this.props;
-    const now = moment(Date.now());
-
-    if (this.isNewDate(now)) {
-      updateLatestDate(now);
-      refreshQuoteData();
-      refreshImageData();
-    }
-  };
-
-  isNewDate = (now) => !now.isSame(this.props.latestDate, 'd');
 
   handleMouseOver = () => {
     this.setState({ isHovered: true });
@@ -59,6 +43,7 @@ class HomeContainer extends Component {
         handleMouseOver={this.handleMouseOver}
         handleMouseLeave={this.handleMouseLeave}
         {...this.state}
+        {...this.props}
         {...this.props.quoteData}
         {...this.props.imageData}
       />
@@ -67,11 +52,7 @@ class HomeContainer extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  quoteData: getQuoteData(state),
-  imageData: getImageData(state),
-  latestDate: getLatestDate(state)
+  name: getName(state)
 });
 
-export default connect(mapStateToProps, { refreshQuoteData, refreshImageData, updateLatestDate })(
-  HomeContainer
-);
+export default connect(mapStateToProps)(HomeContainer);
