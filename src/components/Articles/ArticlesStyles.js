@@ -36,7 +36,7 @@ export const ArticleListItem = styled.div`
   background-color: #fff;
   margin: 10px 0;
   display: flex;
-  color: black;
+  color: rgb(66, 66, 65);
   padding: 6px;
   border-radius: 2px;
 `;
@@ -73,4 +73,9 @@ export const Comments = styled.div`
   font-size: 12px;
   opacity: 0.6;
   margin-top: 2px;
+`;
+
+export const Link = styled.a`
+  color: rgb(66, 66, 65);
+  text-decoration: none;
 `;

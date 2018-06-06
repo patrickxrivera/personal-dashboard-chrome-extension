@@ -2,24 +2,22 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import Articles from './Articles';
-import { getAllArticles } from '../../reducers/articles';
+import { getAllArticles, getPaneIsActive } from '../../reducers/articles';
+import { fetchArticles, togglePane } from '../../actions/articles';
 
 class ArticlesContainer extends Component {
-  state = {
-    paneIsActive: false
-  };
-
-  togglePane = () => {
-    this.setState({ paneIsActive: !this.state.paneIsActive });
-  };
+  componentDidMount() {
+    this.props.fetchArticles();
+  }
 
   render() {
-    return <Articles {...this.state} {...this.props} togglePane={this.togglePane} />;
+    return <Articles {...this.props} />;
   }
 }
 
 const mapStateToProps = (state) => ({
-  articles: getAllArticles(state)
+  articles: getAllArticles(state),
+  paneIsActive: getPaneIsActive(state)
 });
 
-export default connect(mapStateToProps)(ArticlesContainer);
+export default connect(mapStateToProps, { fetchArticles, togglePane })(ArticlesContainer);
