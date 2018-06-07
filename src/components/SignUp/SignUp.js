@@ -8,7 +8,7 @@ const SignUp = ({ src, handleKeyPress, handleInputChange, name }) => (
     <BackgroundImg src={src} />
     <InputWrapper>
       <Heading>Hello, what's your first name?</Heading>
-      <Input onKeyPress={handleKeyPress} onChange={handleInputChange} val={name} autoFocus={true} />
+      <Input onKeyPress={handleKeyPress} onChange={handleInputChange} val={name} autoFocus />
     </InputWrapper>
   </Wrapper>
 );

@@ -6,6 +6,8 @@ import { fadeIn } from '../../utils/animations';
 export const BackgroundImg = styled.img`
   z-index: -1;
   position: absolute;
+  height: 100vh;
+  width: 100vw;
 `;
 
 export const Wrapper = styled.div`
@@ -16,7 +18,7 @@ export const Wrapper = styled.div`
   height: 101vh;
   background: linear-gradient(rgba(1, 1, 1, 0.1), rgba(1, 1, 1, 0.1));
   justify-content: space-between;
-  animation: 200ms ${fadeIn} ease-in forwards;
+  animation: 80ms ${fadeIn} ease-in forwards;
 `;
 
 export const TopWrapper = styled.div`
@@ -29,10 +31,21 @@ export const MiddleWrapper = styled.div`
   flex: 1;
   color: #fff;
   display: flex;
+  align-items: flex-end;
+  justify-content: center;
+`;
+
+export const GreetingWrapper = styled.div`
+  display: flex;
   align-items: center;
   flex-direction: column;
-  padding-top: 8rem;
-  padding-top: 13rem;
+`;
+
+export const Middle = styled.div`
+  padding-bottom: 5%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 `;
 
 export const Time = styled.div`
@@ -44,12 +57,14 @@ export const Greeting = styled.div`
   font-weight: 500;
   font-size: 3.4rem;
   margin-top: -1.5rem;
+  text-align: center;
 `;
 
 export const BottomWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-height: 100px;
 `;
 
 export const QuoteWrapper = styled.div`
@@ -76,7 +91,6 @@ export const QuoteBottom = styled.div`
   justify-content: center;
   font-style: normal;
   align-items: center;
-  border: 2px red border;
   margin-top: -30px;
   font-size: 16px;
   transition: all 300ms ease;

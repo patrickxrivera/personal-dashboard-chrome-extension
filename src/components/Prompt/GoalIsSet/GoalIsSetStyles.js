@@ -5,6 +5,7 @@ import { fadeIn } from '../../../utils/animations';
 
 export const Wrapper = styled.div`
   animation: 500ms ${fadeIn} ease-in forwards;
+  min-height: 170px;
 `;
 
 export const Heading = styled.div`

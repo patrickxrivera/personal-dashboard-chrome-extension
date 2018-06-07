@@ -7,8 +7,6 @@ import PromptContainer from '../Prompt/PromptContainer';
 import TodoContainer from '../Todo/TodoContainer';
 import HackerNewsContainer from '../Articles/HackerNews/HackerNewsContainer';
 import ProductHuntContainer from '../Articles/ProductHunt/ProductHuntContainer';
-import getTwitterLink from './utils/getTwitterLink';
-import './styles.css';
 
 const Home = (props) => (
   <div>
@@ -21,11 +19,15 @@ const Home = (props) => (
         </Style.TopWrapper>
 
         <Style.MiddleWrapper>
-          <Style.Time>{props.currentTime}</Style.Time>
-          <Style.Greeting>
-            Good {props.greeting}, {props.name}.
-          </Style.Greeting>
-          <PromptContainer />
+          <Style.Middle>
+            <Style.GreetingWrapper>
+              <Style.Time>{props.currentTime}</Style.Time>
+              <Style.Greeting>
+                Good {props.greeting}, {props.name}.
+              </Style.Greeting>
+            </Style.GreetingWrapper>
+            <PromptContainer />
+          </Style.Middle>
         </Style.MiddleWrapper>
 
         <Style.BottomWrapper>
@@ -34,19 +36,8 @@ const Home = (props) => (
               {props.credits}
             </a>
           </Style.ImgLocation>
-
-          <Style.QuoteWrapper
-            onMouseOver={props.handleMouseOver}
-            onMouseLeave={props.handleMouseLeave}>
-            <Style.Quote className={get.quoteClassName(props.isHovered)}>
-              "{props.quote}"
-            </Style.Quote>
-            <Style.QuoteBottom className={get.quoteBottomClassName(props.isHovered)}>
-              <Style.QuoteAuthor>{props.author}</Style.QuoteAuthor>
-              <a target="_blank" href={`${getTwitterLink(props.quote, props.author)}`}>
-                <Style.TwitterIcon className={get.twitterIconClassName(props.isHovered)} />
-              </a>
-            </Style.QuoteBottom>
+          <Style.QuoteWrapper>
+            <Style.Quote>"{props.quote}"</Style.Quote>
           </Style.QuoteWrapper>
           <TodoContainer {...props} />
         </Style.BottomWrapper>
