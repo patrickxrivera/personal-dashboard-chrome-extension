@@ -1,6 +1,6 @@
 # Personal Dashboard for Programmers
 
-[Personal Dashboard Live](https://chrome.google.com/webstore/detail/personal-dashboard-for-pr/apjalebbkapoippmfghefkckhlocaigh)
+[Download Chrome Extension](https://chrome.google.com/webstore/detail/personal-dashboard-for-pr/apjalebbkapoippmfghefkckhlocaigh)
 
 New tab chrome extension that displays the top posts from Hacker News and Product Hunt, a scenic background picture, and a to-do widget. Inspired by [Momentum](https://chrome.google.com/webstore/detail/momentum/laookkfknpbbblfpciffpaejjkokdgca?hl=en) and [Panda](https://chrome.google.com/webstore/detail/panda-hacker-news-dribbbl/jhiocdmmaannaccoofjfmjpbfkogmnap?hl=en)
 
