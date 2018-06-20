@@ -23,11 +23,7 @@ New tab chrome extension that displays the top posts from Hacker News and Produc
   * To-do widget to add and delete items
   * Daily background picture using the Unsplash API
   * Current time based on your timezone
-
-
-## Implementation
-
-### Handling 100 Promises concurrently
+  
 
 ## Next steps
 
