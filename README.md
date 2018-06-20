@@ -12,10 +12,7 @@ New tab chrome extension that displays the top posts from Hacker News and Produc
 
   * React
   * Redux
-  * Node.js
-  * Express
-  * MongoDB
-
+  
 
 ## Features
   * Displays the current top five Hacker News stories
