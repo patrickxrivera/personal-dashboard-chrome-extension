@@ -2,9 +2,11 @@
 
 [Personal Dashboard Live](https://chrome.google.com/webstore/detail/personal-dashboard-for-pr/apjalebbkapoippmfghefkckhlocaigh)
 
-New tab chrome extension that displays the top posts from Hacker News and Product Hunt, a scenic background picture, and a to-do widget.
+New tab chrome extension that displays the top posts from Hacker News and Product Hunt, a scenic background picture, and a to-do widget. Inspired by [Momentum](https://chrome.google.com/webstore/detail/momentum/laookkfknpbbblfpciffpaejjkokdgca?hl=en) and [Panda](https://chrome.google.com/webstore/detail/panda-hacker-news-dribbbl/jhiocdmmaannaccoofjfmjpbfkogmnap?hl=en)
 
-![homepage](https://github.com/adrianhorning08/vinyasa/blob/master/vinyasa%20login.png)
+![homepage](https://github.com/pxr13/personal-dashboard-chrome-extension/blob/master/assets/homepage.png)
+![active panes](https://github.com/pxr13/personal-dashboard-chrome-extension/blob/master/assets/active-panes.png)
+
 
 ## Stack
 
@@ -30,5 +32,4 @@ New tab chrome extension that displays the top posts from Hacker News and Produc
 ## Next steps
 
   * Add to-do list integrations with Trello and Evernote
-  * Allow the user to choose  
-  
+  * Allow the user to choose between more news sources like TechCrunch, Dribble, Medium, etc.  
