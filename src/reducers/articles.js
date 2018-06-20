@@ -1,7 +1,9 @@
 import { handleActions } from 'redux-actions';
 
 const initialState = {
-  hackerNews: {},
+  hackerNews: {
+    paneIsActive: true
+  },
   productHunt: {}
 };
 

@@ -31,7 +31,6 @@ export const MiddleWrapper = styled.div`
   flex: 1;
   color: #fff;
   display: flex;
-  align-items: flex-end;
   justify-content: center;
 `;
 
@@ -42,10 +41,11 @@ export const GreetingWrapper = styled.div`
 `;
 
 export const Middle = styled.div`
-  padding-bottom: 5%;
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
+  margin-top: 10%;
 `;
 
 export const Time = styled.div`
