@@ -26,6 +26,10 @@ const createStoryEndpoint = (id) => `${e.HN_STORY}${id}.json`;
 
 /* Product Hunt Pipe */
 
-const fetchTopPosts = (endpoint) => axios.get(endpoint, e.PH_CONFIG);
+const fetchTopPosts = async (endpoint) => {
+  const result = await axios.get(endpoint, e.PH_CONFIG);
+  console.log({ result });
+  return result;
+};
 
 const sliceTopFivePosts = ({ data }) => data.posts.slice(0, 5);
